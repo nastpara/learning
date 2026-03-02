@@ -568,184 +568,234 @@ else if (sym == '%')
 // task 1  Создайте массив из 10 целых чисел и заполните его случайными числами от 1 до 100. Выведите массив на экран.
 
 
-Random random = new Random();
-int[] numbers = new int[10] ;
-for (int i = 0; i < numbers.Length; i++)
-{
-    numbers[i] = random.Next(1, 101);
-    Console.WriteLine(numbers[i]);
-}
+//Random random = new Random();
+//int[] numbers = new int[10] ;
+//for (int i = 0; i < numbers.Length; i++)
+//{
+//    numbers[i] = random.Next(1, 101);
+//    Console.WriteLine(numbers[i]);
+//}
 
-// task 2  Напишите программу, которая находит сумму всех элементов массива из задачи 1.
-int sum = 0;
-for (int i = 0; i < numbers.Length; i++)
-{
-    sum += numbers[i];
-}
-Console.WriteLine($"Сумма: {sum}");
+//// task 2  Напишите программу, которая находит сумму всех элементов массива из задачи 1.
+//int sum = 0;
+//for (int i = 0; i < numbers.Length; i++)
+//{
+//    sum += numbers[i];
+//}
+//Console.WriteLine($"Сумма: {sum}");
 
-// task 3  Напишите программу, которая находит максимальный и минимальный элементы массива из задачи 1.
-int max = numbers.Max();
-Console.WriteLine($"максимальный: {max}");
+//// task 3  Напишите программу, которая находит максимальный и минимальный элементы массива из задачи 1.
+//int max = numbers.Max();
+//Console.WriteLine($"максимальный: {max}");
 
-int min = numbers.Min();
-Console.WriteLine($"минимальный: {min}");
+//int min = numbers.Min();
+//Console.WriteLine($"минимальный: {min}");
 
-// task 4  Напишите программу, которая сортирует массив из задачи 1 по возрастанию и выводит его на экран.
-Array.Sort(numbers);
-Console.WriteLine(string.Join(", ", numbers));
+//// task 4  Напишите программу, которая сортирует массив из задачи 1 по возрастанию и выводит его на экран.
+//Array.Sort(numbers);
+//Console.WriteLine(string.Join(", ", numbers));
 
-// task 5  Напишите программу, которая находит среднее арифметическое всех элементов массива из задачи 1.
-int arith_mean = 0;
-for (int i = 0; i < numbers.Length; i++)
-{
-    arith_mean += numbers[i];
-}
-Console.WriteLine($"Среднее арифметическое: {arith_mean/10}");
+//// task 5  Напишите программу, которая находит среднее арифметическое всех элементов массива из задачи 1.
+//int arith_mean = 0;
+//for (int i = 0; i < numbers.Length; i++)
+//{
+//    arith_mean += numbers[i];
+//}
+//Console.WriteLine($"Среднее арифметическое: {arith_mean/10}");
 
-// task 6  Создайте двумерный массив 3x3 и заполните его случайными числами от 1 до 10. Выведите массив на экран.
-int[,] array = new int[3, 3];
-for (int i = 0; i < 3; i++)
-{
-    for (int j = 0; j < 3; j++)
-    {
-        array[i, j] = random.Next(1, 11);
-        Console.Write(array[i, j] + " ");
-    }
-    Console.WriteLine();
-}
+//// task 6  Создайте двумерный массив 3x3 и заполните его случайными числами от 1 до 10. Выведите массив на экран.
+//int[,] array = new int[3, 3];
+//for (int i = 0; i < 3; i++)
+//{
+//    for (int j = 0; j < 3; j++)
+//    {
+//        array[i, j] = random.Next(1, 11);
+//        Console.Write(array[i, j] + " ");
+//    }
+//    Console.WriteLine();
+//}
 
-// task 7  Напишите программу, которая находит сумму всех элементов двумерного массива из задачи 1.
-sum = 0;
-for (int i = 0; i < 3; i++)
-{
-    for (int j = 0; j < 3; j++)
-    {
-        sum+= array[i, j];
-    }
-}
-Console.WriteLine($"Сумма: {sum}");
+//// task 7  Напишите программу, которая находит сумму всех элементов двумерного массива из задачи 1.
+//sum = 0;
+//for (int i = 0; i < 3; i++)
+//{
+//    for (int j = 0; j < 3; j++)
+//    {
+//        sum+= array[i, j];
+//    }
+//}
+//Console.WriteLine($"Сумма: {sum}");
 
-// task 8  Напишите программу, которая находит максимальный и минимальный элементы двумерного массива из задачи 1.
-max = 0;
-min = 100;
+//// task 8  Напишите программу, которая находит максимальный и минимальный элементы двумерного массива из задачи 1.
+//max = 0;
+//min = 100;
 
-for (int i = 0; i < 3; i++)
-{
-    for (int j = 0; j < 3; j++)
-    {
-        if  (array[i, j]>max)
-        {
-            max = array[i, j];
-        }
-        if (array[i, j] < min) 
-        {
-            min = array[i, j];
-        }
-    }
-}
-Console.WriteLine($"максимальный: {max}, минимальный: {min}");
+//for (int i = 0; i < 3; i++)
+//{
+//    for (int j = 0; j < 3; j++)
+//    {
+//        if  (array[i, j]>max)
+//        {
+//            max = array[i, j];
+//        }
+//        if (array[i, j] < min) 
+//        {
+//            min = array[i, j];
+//        }
+//    }
+//}
+//Console.WriteLine($"максимальный: {max}, минимальный: {min}");
 
-// task 9  Напишите программу, которая транспонирует двумерный массив из задачи 1 (меняет строки на столбцы) и выводит его на экран.
-for(int i = 0; i < 3; i++)
-{
-    for (int j = 0; j < 3; j++)
-    {
-        
-        Console.Write(array[j, i] + " ");
-    }
-    Console.WriteLine();
-}
+//// task 9  Напишите программу, которая транспонирует двумерный массив из задачи 1 (меняет строки на столбцы) и выводит его на экран.
+//for(int i = 0; i < 3; i++)
+//{
+//    for (int j = 0; j < 3; j++)
+//    {
 
-// task 10  Напишите программу, которая находит сумму элементов каждой строки двумерного массива из задачи 1.
-int sum1 = 0;
-int sum2 = 0;   
-int sum3 = 0;
-for (int i = 0; i < 3; i++)
-{
-    for (int j = 0; j < 3; j++)
-    {
-        if (i==0)
-        {
-            sum1 += array[i, j];
-        }
-        if (i == 1)
-        {
-            sum2 += array[i, j];
-        }
-        if (i == 2)
-        {
-            sum3 += array[i, j];
-        }
+//        Console.Write(array[j, i] + " ");
+//    }
+//    Console.WriteLine();
+//}
 
-    }
+//// task 10  Напишите программу, которая находит сумму элементов каждой строки двумерного массива из задачи 1.
+//int sum1 = 0;
+//int sum2 = 0;   
+//int sum3 = 0;
+//for (int i = 0; i < 3; i++)
+//{
+//    for (int j = 0; j < 3; j++)
+//    {
+//        if (i==0)
+//        {
+//            sum1 += array[i, j];
+//        }
+//        if (i == 1)
+//        {
+//            sum2 += array[i, j];
+//        }
+//        if (i == 2)
+//        {
+//            sum3 += array[i, j];
+//        }
+
+//    }
+
+//}
+//Console.WriteLine($"Сумма первой строки: {sum1}, сумма второй строки: {sum2}, сумма третей строки: {sum3}");
+
+//// task 11  Создайте ступенчатый массив из трех строк, где каждая строка содержит случайное количество элементов (от 1 до 5) и заполните их случайными числами от 1 до 10. Выведите массив на экран.
+//int[][] ARray = new int[3][];
+//for (int i = 0; i < ARray.Length; i++)
+//{
+//    int s = random.Next(1, 6);
+//    ARray[i] = new int[s];
+//    for (int j = 0; j < ARray[i].Length; j++)
+//    {
+//        ARray[i][j] = random.Next(1, 11);
+//        Console.Write(ARray[i][j] + " ");
+//    }
+//    Console.WriteLine();
+//}
+
+//// task 12  Создайте трехмерный массив 2x2x2 и заполните его случайными числами от 1 до 10. Выведите массив на экран.
+//Console.WriteLine("task 12: ");
+//int[,,] arr = new int[2, 2, 2];
+//for (int i = 0; i < 2; i++)
+//{
+//    for (int j = 0; j < 2; j++)
+//    {
+//        for (int k = 0; k < 2; k++)
+//        {
+//            arr[i, j, k] = random.Next(1, 11);
+//            Console.Write(arr[i, j, k] + " ");
+//        }
+//    }
+//    Console.WriteLine();
+//}
+
+//// task 13  Написать программу, которая будет вставлять число введённое пользователем по индексу в массив (число элементов в массиве должно стать больше)
+//Console.WriteLine("Task 13: ");
+//int[] number = new int[10];
+//for (int i = 0; i < number.Length; i++)
+//{
+//    number[i] = random.Next(1, 10);
+//    Console.Write(number[i]+ " ");
+//}
+
+//Console.WriteLine();
+
+//int[] num = new int[number.Length + 1];
+//Console.WriteLine("Введите число: ");
+//int n = int.Parse(Console.ReadLine());
+//Console.WriteLine("Введите индекс: ");
+//int index = int.Parse(Console.ReadLine());
+//for ( int i = 0; i < num.Length; i++)
+//{
+//    if (i < index)
+//    {
+//        num[i] = number[i];
+//    }
+//    else if (i == index)
+//    {
+//        num[i] = n;
+//    }
+//    else
+//    {
+//        num[i] = number[i-1];
+//    }
+
+//}
+//for (int i = 0; i < num.Length; i++)
+//{
+//    Console.Write(num[i] + " ");
+//}
+
+
+/* Задачи
+     
+     1. Чтение и вывод содержимого файла:
+        Напишите программу, которая открывает текстовый файл, читает его содержимое и выводит его на экран.
+
+     2.Запись строки в файл:
+       Напишите программу, которая запрашивает у пользователя строку и записывает ее в текстовый файл. Если файл уже существует, его содержимое должно быть удалено.
+
+    3. Добавление текста в файл:
+       Напишите программу, которая запрашивает у пользователя строку и добавляет эту строку в конец текстового файла, 
+       не удаляя его предыдущего содержимого.
     
-}
-Console.WriteLine($"Сумма первой строки: {sum1}, сумма второй строки: {sum2}, сумма третей строки: {sum3}");
+    4. Подсчет строк в файле:
+       Напишите программу, которая открывает текстовый файл и подсчитывает количество строк в нем.
 
-// task 11  Создайте ступенчатый массив из трех строк, где каждая строка содержит случайное количество элементов (от 1 до 5) и заполните их случайными числами от 1 до 10. Выведите массив на экран.
-int[][] ARray = new int[3][];
-for (int i = 0; i < ARray.Length; i++)
-{
-    int s = random.Next(1, 6);
-    ARray[i] = new int[s];
-    for (int j = 0; j < ARray[i].Length; j++)
-    {
-        ARray[i][j] = random.Next(1, 11);
-        Console.Write(ARray[i][j] + " ");
-    }
-    Console.WriteLine();
-}
+    5. Копирование содержимого одного файла в другой:
+       Напишите программу, которая читает содержимое одного текстового файла и записывает его в другой файл.
+     */
 
-// task 12  Создайте трехмерный массив 2x2x2 и заполните его случайными числами от 1 до 10. Выведите массив на экран.
-Console.WriteLine("task 12: ");
-int[,,] arr = new int[2, 2, 2];
-for (int i = 0; i < 2; i++)
-{
-    for (int j = 0; j < 2; j++)
-    {
-        for (int k = 0; k < 2; k++)
-        {
-            arr[i, j, k] = random.Next(1, 11);
-            Console.Write(arr[i, j, k] + " ");
-        }
-    }
-    Console.WriteLine();
-}
+// task 1  Напишите программу, которая открывает текстовый файл, читает его содержимое и выводит его на экран.
+string filePath = "Lesson_7.txt";
+File.Create(filePath).Close();
+string text = "Hello Anton";
+File.WriteAllText(filePath, text);
+string readText = File.ReadAllText(filePath);
+Console.WriteLine(readText);
 
-// task 13  Написать программу, которая будет вставлять число введённое пользователем по индексу в массив (число элементов в массиве должно стать больше)
-Console.WriteLine("Task 13: ");
-int[] number = new int[10];
-for (int i = 0; i < number.Length; i++)
-{
-    number[i] = random.Next(1, 10);
-    Console.Write(number[i]+ " ");
-}
+// task 2  Напишите программу, которая запрашивает у пользователя строку и записывает ее в текстовый файл. Если файл уже существует, его содержимое должно быть удалено.
+File.Delete(filePath);
+string text2 = Console.ReadLine();
+File.WriteAllText(filePath, text2);
+readText = File.ReadAllText(filePath);
+Console.WriteLine(readText);
 
-Console.WriteLine();
+// task 3  Напишите программу, которая запрашивает у пользователя строку и добавляет эту строку в конец текстового файла, не удаляя его предыдущего содержимого.
+string text3 = Console.ReadLine();
+File.AppendAllText(filePath, text3);
+readText = File.ReadAllText(filePath);
+Console.WriteLine(readText);
 
-int[] num = new int[number.Length + 1];
-Console.WriteLine("Введите число: ");
-int n = int.Parse(Console.ReadLine());
-Console.WriteLine("Введите индекс: ");
-int index = int.Parse(Console.ReadLine());
-for ( int i = 0; i < num.Length; i++)
-{
-    if (i < index)
-    {
-        num[i] = number[i];
-    }
-    else if (i == index)
-    {
-        num[i] = n;
-    }
-    else
-    {
-        num[i] = number[i-1];
-    }
-    
-}
-for (int i = 0; i < num.Length; i++)
-{
-    Console.Write(num[i] + " ");
-}
+// task 5   Напишите программу, которая читает содержимое одного текстового файла и записывает его в другой файл.
+readText = File.ReadAllText(filePath);
+string filePath1 = "Lesson_7_1.txt";
+File.Create(filePath1).Close();
+File.WriteAllText(filePath, readText);
+readText = File.ReadAllText(filePath);
+Console.WriteLine(readText);
+
