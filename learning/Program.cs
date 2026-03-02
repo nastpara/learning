@@ -470,62 +470,282 @@ else if (sym == '%')
 */
 
 // task 1  Создайте кортеж, содержащий три элемента разных типов (например, int, string, double).
-var tuple = (6, "kao", 4, 15);
+//var tuple = (6, "kao", 4, 15);
 
-// task 2  Напишите программу, который принимает кортеж из двух элементов (строки) и возвращает их конкатенацию.
-string str1 = Console.ReadLine();
-string str2 = Console.ReadLine();
-var str = (str1, str2) ;
-Console.WriteLine($"{str.Item1}, {str.Item2}");
+//// task 2  Напишите программу, который принимает кортеж из двух элементов (строки) и возвращает их конкатенацию.
+//string str1 = Console.ReadLine();
+//string str2 = Console.ReadLine();
+//var str = (str1, str2) ;
+//Console.WriteLine($"{str.Item1}, {str.Item2}");
 
-// task 3  Создайте кортеж, содержащий два вложенных кортежа. Доступ к элементам вложенных кортежей.
+//// task 3  Создайте кортеж, содержащий два вложенных кортежа. Доступ к элементам вложенных кортежей.
 
-var tuple3 = ((2, 3), (4, 5), (6, 7));
+//var tuple3 = ((2, 3), (4, 5), (6, 7));
 
-// task 4  Напишите программу, которая выводит текущую дату и время в формате "dd.MM.yyyy HH:mm:ss".
-DateTime now = DateTime.Now;
-Console.WriteLine(now);
+//// task 4  Напишите программу, которая выводит текущую дату и время в формате "dd.MM.yyyy HH:mm:ss".
+//DateTime now = DateTime.Now;
+//Console.WriteLine(now);
 
-// task 5  Напишите программу, которая запрашивает у пользователя дату рождения и вычисляет его возраст.
-var now5 = DateOnly.FromDateTime(DateTime.Now);
-int def = 0;
-Console.WriteLine(now5);
-Console.Write("Введите день: ");
-int day = int.Parse(Console.ReadLine());
-Console.Write("Введите месяц: ");
-int month = int.Parse(Console.ReadLine());
-Console.Write("Введите год: ");
-int year = int.Parse(Console.ReadLine());
-var birth = (day, month, year);
-if (now5.Month-birth.Item2<0)
-{
-    def = now5.Year-birth.Item3-1;
-}
-else if (now5.Month - birth.Item2 == 0)
-{
-    if (now5.Day - birth.Item1<0)
-        def = now5.Year - birth.Item3 - 1;
-}
-else
-{
-    def = now5.Year - birth.Item3;
-}
-Console.WriteLine(def);
+//// task 5  Напишите программу, которая запрашивает у пользователя дату рождения и вычисляет его возраст.
+//var now5 = DateOnly.FromDateTime(DateTime.Now);
+//int def = 0;
+//Console.WriteLine(now5);
+//Console.Write("Введите день: ");
+//int day = int.Parse(Console.ReadLine());
+//Console.Write("Введите месяц: ");
+//int month = int.Parse(Console.ReadLine());
+//Console.Write("Введите год: ");
+//int year = int.Parse(Console.ReadLine());
+//var birth = (day, month, year);
+//if (now5.Month-birth.Item2<0)
+//{
+//    def = now5.Year-birth.Item3-1;
+//}
+//else if (now5.Month - birth.Item2 == 0)
+//{
+//    if (now5.Day - birth.Item1<0)
+//        def = now5.Year - birth.Item3 - 1;
+//}
+//else
+//{
+//    def = now5.Year - birth.Item3;
+//}
+//Console.WriteLine(def);
 
-// task 6  Напишите программу, которая вычисляет количество дней до нового года.
-DateTime NY = new DateTime(2027, 1, 1);
-TimeSpan difference = NY - now;
-Console.WriteLine($"Всего дней: {difference.Days}");
+//// task 6  Напишите программу, которая вычисляет количество дней до нового года.
+//DateTime NY = new DateTime(2027, 1, 1);
+//TimeSpan difference = NY - now;
+//Console.WriteLine($"Всего дней: {difference.Days}");
 
-// task 7  Напишите программу, которая рандомно генерирует два числа и вычисляет их среднее арифметическое.
+//// task 7  Напишите программу, которая рандомно генерирует два числа и вычисляет их среднее арифметическое.
+//Random random = new Random();
+//int num1 = random.Next(0, 10);
+//int num2 = random.Next(0, 10);
+//Console.WriteLine($"{num1}, {num2}");
+//Console.WriteLine((num1+num2)/2);
+
+//// task 8  Напишите программу, которая рандомно генерирует радиус круга и вычисляет его площадь.
+//int R = random.Next(0, 10);
+//Console.WriteLine(R);
+//double pi = Math.PI;
+//Console.WriteLine(pi*R*R);
+
+
+/* Задачи на одномерные массивы
+
+        1. Создайте массив из 10 целых чисел и заполните его случайными числами от 1 до 100. Выведите массив на экран.
+
+        2. Напишите программу, которая находит сумму всех элементов массива из задачи 1.
+
+        3. Напишите программу, которая находит максимальный и минимальный элементы массива из задачи 1.
+
+        4. Напишите программу, которая сортирует массив из задачи 1 по возрастанию и выводит его на экран.
+
+        5. Напишите программу, которая находит среднее арифметическое всех элементов массива из задачи 1.
+Задачи на двумерные массивы
+
+        1. Создайте двумерный массив 3x3 и заполните его случайными числами от 1 до 10. Выведите массив на экран.
+
+        2. Напишите программу, которая находит сумму всех элементов двумерного массива из задачи 1.
+
+        3. Напишите программу, которая находит максимальный и минимальный элементы двумерного массива из задачи 1.
+
+        4. Напишите программу, которая транспонирует двумерный массив из задачи 1 (меняет строки на столбцы) и выводит его на экран.
+
+        5. Напишите программу, которая находит сумму элементов каждой строки двумерного массива из задачи 1.
+Задачи на ступенчатые массивы
+
+        1. Создайте ступенчатый массив из трех строк, где каждая строка содержит случайное количество элементов (от 1 до 5) и заполните их случайными числами от 1 до 10. Выведите массив на экран.
+Задачи на трехмерные массивы
+
+        1. Создайте трехмерный массив 2x2x2 и заполните его случайными числами от 1 до 10. Выведите массив на экран.
+Финальная задача
+          Написать программу, которая будет вставлять число введённое пользователем по индексу в массив 
+          (число элементов в массиве должно стать больше)
+
+          Сделать сортировку одномерного и двумерного массива (любая)
+         */
+// task 1  Создайте массив из 10 целых чисел и заполните его случайными числами от 1 до 100. Выведите массив на экран.
+
+
 Random random = new Random();
-int num1 = random.Next(0, 10);
-int num2 = random.Next(0, 10);
-Console.WriteLine($"{num1}, {num2}");
-Console.WriteLine((num1+num2)/2);
+int[] numbers = new int[10] ;
+for (int i = 0; i < numbers.Length; i++)
+{
+    numbers[i] = random.Next(1, 101);
+    Console.WriteLine(numbers[i]);
+}
 
-// task 8  Напишите программу, которая рандомно генерирует радиус круга и вычисляет его площадь.
-int R = random.Next(0, 10);
-Console.WriteLine(R);
-double pi = Math.PI;
-Console.WriteLine(pi*R*R);
+// task 2  Напишите программу, которая находит сумму всех элементов массива из задачи 1.
+int sum = 0;
+for (int i = 0; i < numbers.Length; i++)
+{
+    sum += numbers[i];
+}
+Console.WriteLine($"Сумма: {sum}");
+
+// task 3  Напишите программу, которая находит максимальный и минимальный элементы массива из задачи 1.
+int max = numbers.Max();
+Console.WriteLine($"максимальный: {max}");
+
+int min = numbers.Min();
+Console.WriteLine($"минимальный: {min}");
+
+// task 4  Напишите программу, которая сортирует массив из задачи 1 по возрастанию и выводит его на экран.
+Array.Sort(numbers);
+Console.WriteLine(string.Join(", ", numbers));
+
+// task 5  Напишите программу, которая находит среднее арифметическое всех элементов массива из задачи 1.
+int arith_mean = 0;
+for (int i = 0; i < numbers.Length; i++)
+{
+    arith_mean += numbers[i];
+}
+Console.WriteLine($"Среднее арифметическое: {arith_mean/10}");
+
+// task 6  Создайте двумерный массив 3x3 и заполните его случайными числами от 1 до 10. Выведите массив на экран.
+int[,] array = new int[3, 3];
+for (int i = 0; i < 3; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        array[i, j] = random.Next(1, 11);
+        Console.Write(array[i, j] + " ");
+    }
+    Console.WriteLine();
+}
+
+// task 7  Напишите программу, которая находит сумму всех элементов двумерного массива из задачи 1.
+sum = 0;
+for (int i = 0; i < 3; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        sum+= array[i, j];
+    }
+}
+Console.WriteLine($"Сумма: {sum}");
+
+// task 8  Напишите программу, которая находит максимальный и минимальный элементы двумерного массива из задачи 1.
+max = 0;
+min = 100;
+
+for (int i = 0; i < 3; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        if  (array[i, j]>max)
+        {
+            max = array[i, j];
+        }
+        if (array[i, j] < min) 
+        {
+            min = array[i, j];
+        }
+    }
+}
+Console.WriteLine($"максимальный: {max}, минимальный: {min}");
+
+// task 9  Напишите программу, которая транспонирует двумерный массив из задачи 1 (меняет строки на столбцы) и выводит его на экран.
+for(int i = 0; i < 3; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        
+        Console.Write(array[j, i] + " ");
+    }
+    Console.WriteLine();
+}
+
+// task 10  Напишите программу, которая находит сумму элементов каждой строки двумерного массива из задачи 1.
+int sum1 = 0;
+int sum2 = 0;   
+int sum3 = 0;
+for (int i = 0; i < 3; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        if (i==0)
+        {
+            sum1 += array[i, j];
+        }
+        if (i == 1)
+        {
+            sum2 += array[i, j];
+        }
+        if (i == 2)
+        {
+            sum3 += array[i, j];
+        }
+
+    }
+    
+}
+Console.WriteLine($"Сумма первой строки: {sum1}, сумма второй строки: {sum2}, сумма третей строки: {sum3}");
+
+// task 11  Создайте ступенчатый массив из трех строк, где каждая строка содержит случайное количество элементов (от 1 до 5) и заполните их случайными числами от 1 до 10. Выведите массив на экран.
+int[][] ARray = new int[3][];
+for (int i = 0; i < ARray.Length; i++)
+{
+    int s = random.Next(1, 6);
+    ARray[i] = new int[s];
+    for (int j = 0; j < ARray[i].Length; j++)
+    {
+        ARray[i][j] = random.Next(1, 11);
+        Console.Write(ARray[i][j] + " ");
+    }
+    Console.WriteLine();
+}
+
+// task 12  Создайте трехмерный массив 2x2x2 и заполните его случайными числами от 1 до 10. Выведите массив на экран.
+Console.WriteLine("task 12: ");
+int[,,] arr = new int[2, 2, 2];
+for (int i = 0; i < 2; i++)
+{
+    for (int j = 0; j < 2; j++)
+    {
+        for (int k = 0; k < 2; k++)
+        {
+            arr[i, j, k] = random.Next(1, 11);
+            Console.Write(arr[i, j, k] + " ");
+        }
+    }
+    Console.WriteLine();
+}
+
+// task 13  Написать программу, которая будет вставлять число введённое пользователем по индексу в массив (число элементов в массиве должно стать больше)
+Console.WriteLine("Task 13: ");
+int[] number = new int[10];
+for (int i = 0; i < number.Length; i++)
+{
+    number[i] = random.Next(1, 10);
+    Console.Write(number[i]+ " ");
+}
+
+Console.WriteLine();
+
+int[] num = new int[number.Length + 1];
+Console.WriteLine("Введите число: ");
+int n = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите индекс: ");
+int index = int.Parse(Console.ReadLine());
+for ( int i = 0; i < num.Length; i++)
+{
+    if (i < index)
+    {
+        num[i] = number[i];
+    }
+    else if (i == index)
+    {
+        num[i] = n;
+    }
+    else
+    {
+        num[i] = number[i-1];
+    }
+    
+}
+for (int i = 0; i < num.Length; i++)
+{
+    Console.Write(num[i] + " ");
+}
