@@ -43,7 +43,7 @@
             Итоговое задание - написать свой калькулятор. Подумать, как можно добавить тернарный оператор
          */
 
-
+/*
 //task 1.1
 int age = int.Parse(Console.ReadLine());
 Console.WriteLine("Task 1");
@@ -197,4 +197,144 @@ else if (sym == '/')
 else if (sym == '%')
 {
     Console.WriteLine(number1 % number2);
+}
+*/
+
+/*
+Выведите на экран 10 раз фразу "You are welcome!"
+    Выведите на экран n раз фразу "Silence is golden". Число n вводит пользователь.
+    Выведите на экран прямоугольник из нулей. Количество строк вводит пользователь, количество столбцов равно 5.
+
+    Вывести на экран фигуру из звездочек:
+    *******
+    *******
+    *******
+    *******
+    (квадрат из n строк, в каждой строке n звездочек)
+
+    Вывести на экран числа от 1000 до 9999 такие, что среди цифр есть цифра 3.
+
+    Выведите на экран строки вида:
+    *******
+    ****
+    *******
+    ****
+    *******
+    ****
+    (всего n строк, звездочек или 7, или 4 по очереди)
+
+
+    Вывести на экран:
+    AAABBBAAABBBAAABBB
+    BBBAAABBBAAABBBAAA
+    AAABBBAAABBBAAABBB
+    (таких строк n, в каждой строке m троек AAA)
+
+    Вывести на экран:
+    AAAAAAAAAAAAAAAA
+    ABBBBBBBBBBBBBBA
+    ABBBBBBBBBBBBBBA
+    ABBBBBBBBBBBBBBA
+    AAAAAAAAAAAAAAAA
+    (количество строк вводит пользователь, ширина прямоугольника в два раза больше высоты)
+
+    Выведите на экран квадрат из нулей и единиц, причем нули находятся только на диагонали квадрата. Всего в квадрате сто цифр. Обе диагонали состоят из 0
+
+    Вывести на экран числа от 1 до 100, которые делятся на 3 или на 5.
+
+    Вывести на экран таблицу умножения для числа n (n вводит пользователь).
+
+    Вывести на экран все четные числа от 1 до n (n вводит пользователь).
+*/
+
+// Выведите на экран 10 раз фразу "You are welcome!" task 1-2
+Console.Write("Введите количество строк: ");
+int n1 = int.Parse(Console.ReadLine());
+Console.WriteLine("Task 1");
+for (int i = 0; i<n1; i++)
+{
+    Console.WriteLine("I love you");
+}
+
+// Выведите на экран прямоугольник из нулей. Количество строк вводит пользователь, количество столбцов равно n.
+
+Console.Write("Введите количество строк: ");
+int n2_1 = int.Parse(Console.ReadLine());
+int n2_2 = int.Parse(Console.ReadLine());
+for (int i = 0; i < n2_1; i++)
+{
+    for (int j = 1; j < n2_2; j++)
+    {
+        Console.Write('0');
+    }
+    Console.WriteLine('0');
+}
+
+//// task 3   Вывести на экран числа от 1000 до 9999 такие, что среди цифр есть цифра 3.
+//for (int i = 1000; i < 9999; i++)
+//{
+//    if (i / 1000 == 3 || i /10 % 10 == 3 || i /10 %10 == 3 || i %1000==3)
+//    {
+//        Console.WriteLine(i);
+//    }
+//}
+
+// task 4  Выведите на экран строки вида:
+//*******
+//****
+//*******
+//****
+//*******
+//****
+//(всего n строк, звездочек или 7, или 4 по очереди)
+int n4 = int.Parse(Console.ReadLine());
+for (int i = 0; i<n4; i++)
+{
+    if (i % 2 == 1)
+        Console.WriteLine("****"); 
+    else
+        Console.WriteLine("*******");
+}
+
+// task 5 Вывести на экран: 
+//AAABBBAAABBBAAABBB
+//BBBAAABBBAAABBBAAA
+//AAABBBAAABBBAAABBB
+//    (таких строк n, в каждой строке m троек AAA)
+int n5 = int.Parse(Console.ReadLine());
+int m5 = int.Parse(Console.ReadLine());
+string s1 = "AAABBB";
+string s2 = "BBBAAA";
+string s = "";
+for (int i = 0;i<n5; i++)
+{
+    if (i % 2 == 0)
+    {
+        for (int j = 1; j < m5 + 1; j++)
+        {
+            s += s1;
+        }
+    }
+    if (i % 2 == 1)
+    {
+        for (int k = 1; k < m5 + 1; k++)
+        {
+            s += s2;
+        }
+    }
+    Console.WriteLine(s);
+    s = "";
+}
+
+// task 6  Вывести на экран все числа от 1 до n, которые являются степенью числа 23.
+int n6  = int.Parse(Console.ReadLine());
+int num = 1;
+Console.WriteLine(1);
+for (int i = 1; i<n6; i++)
+{
+    if (num*23 == i && i%23==0)
+    {
+        num = num*23;
+        Console.WriteLine(num);
+    }
 }
