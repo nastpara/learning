@@ -1026,105 +1026,248 @@ else if (sym == '%')
 // task 1 Напишите перегруженные методы, которые выводят приветствие в зависимости от количества переданных параметров: 
 //-Если передано одно имя, выводит "Привет, [имя]!".
 //   - Если передано два имени, выводит "Привет, [имя1] и [имя2]!".
-class Program
+//class Program
+//{
+//    static void Main()
+//    {
+//        Console.WriteLine("Task 1: ");
+
+//        Hel("Re");
+//        Hel("Re", "Ter");
+//        Console.WriteLine("Task 2: ");
+//        Console.WriteLine( Sum(1, 2));
+//        Console.WriteLine( Sum(1, 2, 3));
+//        Console.WriteLine( Sum(1, 2, 3, 4));
+//        Console.WriteLine("Task 3: ");
+//        Console.WriteLine(S(2));
+//        Console.WriteLine(S(1, 2));
+//        Console.WriteLine(S(4.0, 2));
+//        Console.WriteLine("Task 4: ");
+//        Num(4, 2, 5);
+//        Console.WriteLine("Task 5: ");
+//        Console.WriteLine(Sum(1, 2, 3, 4, 5));
+//        Console.WriteLine("Task 6: ");
+//        Console.WriteLine(Vol(1, 2, 3, 4, 5));
+//    }
+//    static void Hel(string a)
+//    {
+//        Console.WriteLine($"Привет, {a}!");
+//    }
+
+//    static void Hel(string a, string b)
+//    {
+//        Console.WriteLine($"Привет, {a} и {b}!");
+//    }
+
+//    // task 2   Напишите перегруженные методы, которые выводят сумму двух, трёх или четырёх чисел в зависимости от количества переданных параметров.
+//    public static int Sum(int a, int b)
+//    {
+//        return a + b;
+//    }
+
+//    public static int Sum(int a, int b, int c)
+//    {
+//        return a + b + c;
+//    }
+//    public static int Sum(int a, int b, int c, int d)
+//    {
+//        return a + b + c + d;
+//    }
+
+//    // task 3 Напишите перегруженные методы, которые выводят информацию о площади фигур (круг, прямоугольник, треугольник) в зависимости от переданных параметров (радиус, стороны и т.д.).
+//    public static double S(int a)
+//    {
+//        double pi = Math.PI;
+//        return a*a*pi;
+//    }
+
+//    public static int S(int a, int b)
+//    {
+//        return a * b;
+//    }
+//    public static double S(double a, double b)
+//    {
+//        return (a*b*0.5);
+//    }
+
+//    // task 4  Напишите метод с `params`, который принимает переменное количество целых чисел и выводит их на экран.
+
+//    public static void Num(params int[] numbers)
+//    {
+//        for (int i = 0; i < numbers.Length; i++)
+//        {
+//            Console.Write(numbers[i]+" ");
+//        }
+//    }
+
+//    // task 5  Напишите метод с `params`, который принимает переменное количество чисел и выводит их сумму.
+
+//    public static int Sum(params int[] numbers)
+//    {
+//        int sum = 0;
+//        foreach (int num in numbers)
+//        {
+//            sum += num;
+//        }
+//        return sum;
+//    }
+
+//    // task 6  Напишите метод с `params`, который принимает переменное количество чисел и выводит только чётные из них.
+
+//    public static int Vol(params int[] numbers)
+//    {
+//        int vol = 0;
+//        foreach (int num in numbers)
+//        {
+//            if (num%2==0)
+//            {
+//                vol++;
+//            }
+//        }
+//        return vol;
+//    }
+
+//}
+
+
+/* Задачи для ref 
+
+1. Обмен значений:
+   Напишите функцию, которая принимает два числа по ссылке (ref) и меняет их значения местами.
+
+2. Увеличение на процент:
+   Напишите функцию, которая принимает число и процент по ссылке (ref), и увеличивает число на указанный процент.
+Задачи для out 
+
+1. Инициализация массива:
+   Напишите функцию, которая принимает размер массива и переменную для массива по ссылке (out), и создаёт массив указанного размера.
+
+2. Разделение строки:
+   Напишите функцию, которая принимает строку и две переменные по ссылке (out), и разделяет строку на две части по первому пробелу.
+Задачи для in 
+
+1. Вывод массива:
+   Напишите функцию, которая принимает массив по ссылке (in) и выводит его элементы на экран.
+
+2. Подсчёт суммы элементов:
+   Напишите функцию, которая принимает массив по ссылке (in) и возвращает сумму его элементов.
+*/
+
+// task 1  Напишите функцию, которая принимает два числа по ссылке (ref) и меняет их значения местами.
+Console.WriteLine("Task 1: ");
+static void Exc(ref int x, ref int y)
 {
-    static void Main()
-    {
-        Console.WriteLine("Task 1: ");
+    int b = x;
+    x = y;
+    y = b;
+     
+}
 
-        Hel("Re");
-        Hel("Re", "Ter");
-        Console.WriteLine("Task 2: ");
-        Console.WriteLine( Sum(1, 2));
-        Console.WriteLine( Sum(1, 2, 3));
-        Console.WriteLine( Sum(1, 2, 3, 4));
-        Console.WriteLine("Task 3: ");
-        Console.WriteLine(S(2));
-        Console.WriteLine(S(1, 2));
-        Console.WriteLine(S(4.0, 2));
-        Console.WriteLine("Task 4: ");
-        Num(4, 2, 5);
-        Console.WriteLine("Task 5: ");
-        Console.WriteLine(Sum(1, 2, 3, 4, 5));
-        Console.WriteLine("Task 6: ");
-        Console.WriteLine(Vol(1, 2, 3, 4, 5));
-    }
-    static void Hel(string a)
-    {
-        Console.WriteLine($"Привет, {a}!");
-    }
+int x = 10;
+int y = 12;
 
-    static void Hel(string a, string b)
-    {
-        Console.WriteLine($"Привет, {a} и {b}!");
-    }
+Exc(ref x, ref y);
 
-    // task 2   Напишите перегруженные методы, которые выводят сумму двух, трёх или четырёх чисел в зависимости от количества переданных параметров.
-    public static int Sum(int a, int b)
-    {
-        return a + b;
-    }
+Console.WriteLine($"x: {x}, y: {y}");
 
-    public static int Sum(int a, int b, int c)
-    {
-        return a + b + c;
-    }
-    public static int Sum(int a, int b, int c, int d)
-    {
-        return a + b + c + d;
-    }
+// task 2  Напишите функцию, которая принимает число и процент по ссылке (ref), и увеличивает число на указанный процент.
+Console.WriteLine("Task 2: ");
+static void Per(ref int num,  int per)
+{
+    int a = num * per / 100 + num;
+    num = a;
+}
 
-    // task 3 Напишите перегруженные методы, которые выводят информацию о площади фигур (круг, прямоугольник, треугольник) в зависимости от переданных параметров (радиус, стороны и т.д.).
-    public static double S(int a)
-    {
-        double pi = Math.PI;
-        return a*a*pi;
-    }
+int num = 10;
+int per = 200;
 
-    public static int S(int a, int b)
-    {
-        return a * b;
-    }
-    public static double S(double a, double b)
-    {
-        return (a*b*0.5);
-    }
+Per(ref num,  per);
 
-    // task 4  Напишите метод с `params`, который принимает переменное количество целых чисел и выводит их на экран.
+Console.WriteLine($"{num}");
 
-    public static void Num(params int[] numbers)
+// task 3  Напишите функцию, которая принимает размер массива и переменную для массива по ссылке (out), и создаёт массив указанного размера.
+Console.WriteLine("Task 3: ");
+static void Arr(int size, out int[] arr)
+{
+    arr = new int[size];
+    for (int i = 0; i < size; i++)
     {
-        for (int i = 0; i < numbers.Length; i++)
+        arr[i] = i;
+    }
+}
+int size = 5;
+int[] arr;
+Arr(size, out arr);
+
+for  (int i = 0; i<arr.Length; i++)
+{
+    Console.Write(arr[i] + " ");
+}
+Console.WriteLine();
+
+// task 4  Напишите функцию, которая принимает строку и две переменные по ссылке (out), и разделяет строку на две части по первому пробелу.
+Console.WriteLine("Task 4: ");
+static void F(string str, out string str1, out string str2)
+{
+    string s1 = "";
+    string s2 = "";
+    char[] chars = [' '];
+        int f = 0;
+        for (int i = 0; i < str.Length; i++)
         {
-            Console.Write(numbers[i]+" ");
-        }
-    }
-
-    // task 5  Напишите метод с `params`, который принимает переменное количество чисел и выводит их сумму.
-
-    public static int Sum(params int[] numbers)
-    {
-        int sum = 0;
-        foreach (int num in numbers)
-        {
-            sum += num;
-        }
-        return sum;
-    }
-
-    // task 6  Напишите метод с `params`, который принимает переменное количество чисел и выводит только чётные из них.
-
-    public static int Vol(params int[] numbers)
-    {
-        int vol = 0;
-        foreach (int num in numbers)
-        {
-            if (num%2==0)
+            if (f == 0)
             {
-                vol++;
+                for (int j = i; j <= i; j++)
+                {
+                    s1 += str[i];
+                }
+            }
+            if (chars.Contains(str[i]))
+            {
+                f = 1;
+            }
+            if (f==1)
+            {
+                for (int j = i; j <= i; j++)
+                {
+                    s2 += str[i];
+                }
             }
         }
-        return vol;
-    }
-
+    str1 = s1;
+    str2 = s2;
 }
+string str = "Hello world!";
+string str1;
+string str2;
+F(str, out str1, out str2);
+Console.WriteLine($"{str1},{str2}");
+
+// task 5  Напишите функцию, которая принимает массив по ссылке (in) и выводит его элементы на экран.
+Console.WriteLine("Task 5: ");
+static void Array(in int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.WriteLine();
+}
+int[] array = { 1, 2, 3 };
+Array(in array);
+
+// task 6   Напишите функцию, которая принимает массив по ссылке (in) и возвращает сумму его элементов.
+Console.WriteLine("Task 6: ");
+
+static int Arra(in int[] arra)
+{
+    int sum = 0;
+    for (int i = 0; i < arra.Length; i++)
+    {
+        sum+=arra[i];
+    }
+    return sum;
+}
+int[] arra = { 1, 2, 3 };
+var ans = Arra(in arra);
+Console.WriteLine(ans);
