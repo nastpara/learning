@@ -1282,30 +1282,84 @@ else if (sym == '%')
    Напишите обобщённый метод, который меняет местами два значения любого типа.
 */
 // task 1  Напишите обобщённый метод, который принимает массив любого типа и выводит его элементы через запятую.
-using System.Drawing;
+//using System.Drawing;
 
-Console.WriteLine("Task 1: ");
-static void Arr<T>(T[] arr)
+//Console.WriteLine("Task 1: ");
+//static void Arr<T>(T[] arr)
+//{
+//    for (int i = 0; i < arr.Length; i++)
+//    {
+//        Console.Write(arr[i]+", ");
+//    }
+//}
+//int[] arr = { 1, 2, 3 };
+//Arr(arr);
+//Console.WriteLine();
+
+//// task 2  Напишите обобщённый метод, который меняет местами два значения любого типа.
+//Console.WriteLine("Task 2: ");
+//static void Num<T>(ref T num1, ref T num2)
+//{
+//    T num = num1;
+//    num1 = num2;
+//    num2 = num;
+//}
+//int num1 = 3;
+//int  num2 = 4;
+//Num(ref num1,ref num2);
+//Console.WriteLine($"num1: {num1},num2: {num2}");
+
+/* Задачи для отработки оператора switch
+
+1. Определить, является ли введенная буква гласной или согласной, используя when.
+2. Определить, является ли число четным, нечетным или нулем, используя when.
+3. Вывести название месяца по его номеру.
+*/
+// task 1  Определить, является ли введенная буква гласной или согласной, используя when.
+static string Let(char letter)
 {
-    for (int i = 0; i < arr.Length; i++)
+    return letter switch
     {
-        Console.Write(arr[i]+", ");
+        char c when "aeyuio".Contains(c) => "Гласная буква",
+        char c when "qwrtpsdfghjklzxcvbnm".Contains(c) => "Согласная буква",
+        _ => "Неизвестный символ"
+    };
+}
+Console.WriteLine(Let('g'));
+
+// task 2  Определить, является ли число четным, нечетным или нулем, используя when.
+static string Par(int num)
+{
+    return num switch
+    {
+        int m when m == 0 => "This is 0",
+        int m when m %2==0  => "Yes",
+        int m when m % 2 == 1 => "No",
+        _ => "Некорректный месяц"
+    };
+}
+Console.WriteLine(Par(0)) ;
+
+// task 3  Вывести название месяца по его номеру.
+
+static string Month(int month)
+{
+    switch (month)
+    {
+        case 1: return "Январь";
+        case 2: return "Фебраль";
+        case 3: return "Март";
+        case 4: return "Апрель";
+        case 5: return "Май";
+        case 6: return "Июнь";
+        case 7: return "Июль";
+        case 8: return "Август";
+        case 9: return "Сентябрь";
+        case 10: return "Оетябрь";
+        case 11: return "Ноябрь";
+        case 12 : return "Декабрь";
+        default: return "Некорректный номер дня";
     }
 }
-int[] arr = { 1, 2, 3 };
-Arr(arr);
-Console.WriteLine();
-
-// task 2  Напишите обобщённый метод, который меняет местами два значения любого типа.
-Console.WriteLine("Task 2: ");
-static void Num<T>(ref T num1, ref T num2)
-{
-    T num = num1;
-    num1 = num2;
-    num2 = num;
-}
-int num1 = 3;
-int  num2 = 4;
-Num(ref num1,ref num2);
-Console.WriteLine($"num1: {num1},num2: {num2}");
+Console.WriteLine(Month(9));
 
