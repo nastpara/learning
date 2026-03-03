@@ -1316,50 +1316,59 @@ else if (sym == '%')
 3. Вывести название месяца по его номеру.
 */
 // task 1  Определить, является ли введенная буква гласной или согласной, используя when.
-static string Let(char letter)
-{
-    return letter switch
-    {
-        char c when "aeyuio".Contains(c) => "Гласная буква",
-        char c when "qwrtpsdfghjklzxcvbnm".Contains(c) => "Согласная буква",
-        _ => "Неизвестный символ"
-    };
-}
-Console.WriteLine(Let('g'));
+//static string Let(char letter)
+//{
+//    return letter switch
+//    {
+//        char c when "aeyuio".Contains(c) => "Гласная буква",
+//        char c when "qwrtpsdfghjklzxcvbnm".Contains(c) => "Согласная буква",
+//        _ => "Неизвестный символ"
+//    };
+//}
+//Console.WriteLine(Let('g'));
 
-// task 2  Определить, является ли число четным, нечетным или нулем, используя when.
-static string Par(int num)
-{
-    return num switch
-    {
-        int m when m == 0 => "This is 0",
-        int m when m %2==0  => "Yes",
-        int m when m % 2 == 1 => "No",
-        _ => "Некорректный месяц"
-    };
-}
-Console.WriteLine(Par(0)) ;
+//// task 2  Определить, является ли число четным, нечетным или нулем, используя when.
+//static string Par(int num)
+//{
+//    return num switch
+//    {
+//        int m when m == 0 => "This is 0",
+//        int m when m %2==0  => "Yes",
+//        int m when m % 2 == 1 => "No",
+//        _ => "Некорректный месяц"
+//    };
+//}
+//Console.WriteLine(Par(0)) ;
 
-// task 3  Вывести название месяца по его номеру.
+//// task 3  Вывести название месяца по его номеру.
 
-static string Month(int month)
-{
-    switch (month)
-    {
-        case 1: return "Январь";
-        case 2: return "Фебраль";
-        case 3: return "Март";
-        case 4: return "Апрель";
-        case 5: return "Май";
-        case 6: return "Июнь";
-        case 7: return "Июль";
-        case 8: return "Август";
-        case 9: return "Сентябрь";
-        case 10: return "Оетябрь";
-        case 11: return "Ноябрь";
-        case 12 : return "Декабрь";
-        default: return "Некорректный номер дня";
-    }
-}
-Console.WriteLine(Month(9));
+//static string Month(int month)
+//{
+//    switch (month)
+//    {
+//        case 1: return "Январь";
+//        case 2: return "Фебраль";
+//        case 3: return "Март";
+//        case 4: return "Апрель";
+//        case 5: return "Май";
+//        case 6: return "Июнь";
+//        case 7: return "Июль";
+//        case 8: return "Август";
+//        case 9: return "Сентябрь";
+//        case 10: return "Оетябрь";
+//        case 11: return "Ноябрь";
+//        case 12 : return "Декабрь";
+//        default: return "Некорректный номер дня";
+//    }
+//}
+//Console.WriteLine(Month(9));
 
+// task 1 Проверить, является ли строка номером телефона в формате "+7(XXX)XXX-XX-XX".
+
+using System.Text.RegularExpressions;
+
+Console.WriteLine("Введите номер телефона: ");
+string number = "+7(930)087-53-00";
+string num = @"^\+7\((\d{3})\)\d{3}-\d{2}-\d{2}$";
+bool n = Regex.IsMatch(number, num);
+Console.WriteLine(n ? "Корректный номер телефона" : "Некорректный номер телефона");
