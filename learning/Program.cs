@@ -771,31 +771,230 @@ else if (sym == '%')
      */
 
 // task 1  Напишите программу, которая открывает текстовый файл, читает его содержимое и выводит его на экран.
-string filePath = "Lesson_7.txt";
-File.Create(filePath).Close();
-string text = "Hello Anton";
-File.WriteAllText(filePath, text);
-string readText = File.ReadAllText(filePath);
-Console.WriteLine(readText);
+//string filePath = "Lesson_7.txt";
+//File.Create(filePath).Close();
+//string text = "Hello Anton";
+//File.WriteAllText(filePath, text);
+//string readText = File.ReadAllText(filePath);
+//Console.WriteLine(readText);
 
-// task 2  Напишите программу, которая запрашивает у пользователя строку и записывает ее в текстовый файл. Если файл уже существует, его содержимое должно быть удалено.
-File.Delete(filePath);
-string text2 = Console.ReadLine();
-File.WriteAllText(filePath, text2);
-readText = File.ReadAllText(filePath);
-Console.WriteLine(readText);
+//// task 2  Напишите программу, которая запрашивает у пользователя строку и записывает ее в текстовый файл. Если файл уже существует, его содержимое должно быть удалено.
+//File.Delete(filePath);
+//string text2 = Console.ReadLine();
+//File.WriteAllText(filePath, text2);
+//readText = File.ReadAllText(filePath);
+//Console.WriteLine(readText);
 
-// task 3  Напишите программу, которая запрашивает у пользователя строку и добавляет эту строку в конец текстового файла, не удаляя его предыдущего содержимого.
-string text3 = Console.ReadLine();
-File.AppendAllText(filePath, text3);
-readText = File.ReadAllText(filePath);
-Console.WriteLine(readText);
+//// task 3  Напишите программу, которая запрашивает у пользователя строку и добавляет эту строку в конец текстового файла, не удаляя его предыдущего содержимого.
+//string text3 = Console.ReadLine();
+//File.AppendAllText(filePath, text3);
+//readText = File.ReadAllText(filePath);
+//Console.WriteLine(readText);
 
-// task 5   Напишите программу, которая читает содержимое одного текстового файла и записывает его в другой файл.
-readText = File.ReadAllText(filePath);
-string filePath1 = "Lesson_7_1.txt";
-File.Create(filePath1).Close();
-File.WriteAllText(filePath, readText);
-readText = File.ReadAllText(filePath);
-Console.WriteLine(readText);
+//// task 5   Напишите программу, которая читает содержимое одного текстового файла и записывает его в другой файл.
+//readText = File.ReadAllText(filePath);
+//string filePath1 = "Lesson_7_1.txt";
+//File.Create(filePath1).Close();
+//File.WriteAllText(filePath, readText);
+//readText = File.ReadAllText(filePath);
+//Console.WriteLine(readText);
 
+
+/* Задачи (без возврата)
+
+1. Вывод приветствия:
+   Напишите функцию, которая принимает имя пользователя и выводит на экран приветствие в формате: "Привет, [имя]!".
+
+2. Вывод таблицы умножения:
+   Напишите функцию, которая выводит таблицу умножения для числа, переданного в качестве параметра.
+
+3. Вывод массива:
+   Напишите функцию, которая принимает массив целых чисел и выводит его элементы на экран.
+
+4. Вывод чисел от 1 до N:
+   Напишите функцию, которая принимает число N и выводит все числа от 1 до N.
+
+5. Вывод чётных чисел:
+   Напишите функцию, которая принимает число N и выводит все чётные числа от 1 до N.
+
+1. Сумма двух чисел:
+   Напишите функцию, которая принимает два числа и возвращает их сумму.
+
+2. Факториал числа:
+   Напишите функцию, которая принимает число и возвращает его факториал.
+
+3. Максимальное число в массиве:
+   Напишите функцию, которая принимает массив целых чисел и возвращает максимальное число в массиве.
+
+4. Минимальное число в массиве:
+   Напишите функцию, которая принимает массив целых чисел и возвращает минимальное число в массиве.
+
+5. Среднее арифметическое массива:
+   Напишите функцию, которая принимает массив целых чисел и возвращает среднее арифметическое его элементов.
+4. Подсчёт гласных в строке:
+   Напишите функцию, которая принимает строку и возвращает количество гласных букв в ней.
+
+5. Сортировка массива:
+   Напишите функцию, которая принимает массив целых чисел и возвращает отсортированный массив (по возрастанию).
+*/
+
+// task 1 Напишите функцию, которая принимает имя пользователя и выводит на экран приветствие в формате: "Привет, [имя]!".
+using System.Runtime.ExceptionServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+static void Task1()
+{
+    string name = Console.ReadLine();
+    Console.WriteLine($"Привет, {name}!");
+}
+Task1();
+
+// task 2  Напишите функцию, которая выводит таблицу умножения для числа, переданного в качестве параметра.
+static void Task2(int num)
+{
+    int n = 0;
+    while (n<11)
+    {
+        Console.WriteLine(n * num);
+        n++;
+    }
+}
+Task2(int.Parse(Console.ReadLine()));
+
+// task 3  Напишите функцию, которая принимает массив целых чисел и выводит его элементы на экран.
+static void Task3(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i]+ " ");
+    }
+}
+Task3([1,2,3,4,5]);
+
+// task 4  Напишите функцию, которая принимает число N и выводит все числа от 1 до N.
+Console.WriteLine();
+static void Task4(int N)
+{
+    for (int i = 1;i <= N;i++)
+    {
+        Console.WriteLine(i);
+    }
+}
+Task4(int.Parse(Console.ReadLine()));
+
+// task 5  Напишите функцию, которая принимает число N и выводит все чётные числа от 1 до N.
+static void Task5(int N)
+{
+    for (int i = 2; i <= N; i+=2)
+    {
+        Console.WriteLine(i);
+    }
+}
+Task5(int.Parse(Console.ReadLine()));
+
+
+// task 6  Напишите функцию, которая принимает два числа и возвращает их сумму.
+Console.WriteLine("Task 6");
+static int Sum(int num1, int num2)
+{
+    int sum = 0;
+    sum = num1 + num2;
+    return sum;
+}
+int res = Sum(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()));
+
+Console.WriteLine(res);
+// task 7  Напишите функцию, которая принимает число и возвращает его факториал.
+static int Fac(int num)
+{
+    int fac = 1;
+    for (int i = 1; i <= num; i++)
+    {
+        fac *= i;
+    }
+    return fac;
+}
+res = Fac(int.Parse(Console.ReadLine()));
+Console.WriteLine(res);
+
+// task 8  Напишите функцию, которая принимает массив целых чисел и возвращает максимальное число в массиве. Напишите функцию, которая принимает массив целых чисел и возвращает минимальное число в массиве.
+Console.WriteLine("Task 8: ");
+static int Array1(int[] array)
+{
+    int max = array.Max();
+    return max;
+    
+}
+res = Array1([1,2,3,4,5]);
+Console.WriteLine(res);
+static int Array2(int[] array)
+{
+    int min = array.Min();
+    return min;
+
+}
+res = Array2([1, 2, 3, 4, 5]);
+Console.WriteLine(res);
+
+// task 9  Напишите функцию, которая принимает массив целых чисел и возвращает среднее арифметическое его элементов.
+Console.WriteLine("Task 9: ");
+static int Arr(int[] array)
+{
+    int sum = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        sum += array[i];
+    }
+    return sum / array.Length;
+}
+res = Arr([1, 2, 3, 4, 5, 6]);
+Console.WriteLine(res);
+
+// task 10  Напишите функцию, которая принимает строку и возвращает количество гласных букв в ней.
+Console.WriteLine("Task 10:");
+static int Str(string str)
+{
+    char[] chars = ['a','e','y','u','i','o',];
+    int count = 0;
+    for (int i = 0;i < str.Length;i++)
+    {
+        if (chars.Contains(str[i]))
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+res = Str("Hello");
+Console.WriteLine(res);
+
+// task 11  Напишите функцию, которая принимает массив целых чисел и возвращает отсортированный массив (по возрастанию).
+Console.WriteLine("Task 11: ");
+static int[] Arra(int[] array)
+{
+    int n = 0;
+    for (int i = 1; i < array.Length; i++)
+    {
+        for (int j = 1; j < array.Length; j++)
+        {
+            n = array[j-1];
+            if (array[j] < array[j-1])
+            {
+                array[j-1] = array[j];
+                array[j] = n;
+            }
+            else
+            {
+                array[j] = array[j];
+                array[j-1] = n;
+            }
+        }
+    }
+    return array;
+}
+int[] rest = Arra([1, 7, 9, 4, 5, 3]);
+for (int i = 0; i < rest.Length; i++)
+{
+    Console.Write(rest[i] + " ");
+}
