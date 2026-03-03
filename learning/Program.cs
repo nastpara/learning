@@ -1154,120 +1154,158 @@ else if (sym == '%')
 */
 
 // task 1  Напишите функцию, которая принимает два числа по ссылке (ref) и меняет их значения местами.
+//Console.WriteLine("Task 1: ");
+//static void Exc(ref int x, ref int y)
+//{
+//    int b = x;
+//    x = y;
+//    y = b;
+
+//}
+
+//int x = 10;
+//int y = 12;
+
+//Exc(ref x, ref y);
+
+//Console.WriteLine($"x: {x}, y: {y}");
+
+//// task 2  Напишите функцию, которая принимает число и процент по ссылке (ref), и увеличивает число на указанный процент.
+//Console.WriteLine("Task 2: ");
+//static void Per(ref int num,  int per)
+//{
+//    int a = num * per / 100 + num;
+//    num = a;
+//}
+
+//int num = 10;
+//int per = 200;
+
+//Per(ref num,  per);
+
+//Console.WriteLine($"{num}");
+
+//// task 3  Напишите функцию, которая принимает размер массива и переменную для массива по ссылке (out), и создаёт массив указанного размера.
+//Console.WriteLine("Task 3: ");
+//static void Arr(int size, out int[] arr)
+//{
+//    arr = new int[size];
+//    for (int i = 0; i < size; i++)
+//    {
+//        arr[i] = i;
+//    }
+//}
+//int size = 5;
+//int[] arr;
+//Arr(size, out arr);
+
+//for  (int i = 0; i<arr.Length; i++)
+//{
+//    Console.Write(arr[i] + " ");
+//}
+//Console.WriteLine();
+
+//// task 4  Напишите функцию, которая принимает строку и две переменные по ссылке (out), и разделяет строку на две части по первому пробелу.
+//Console.WriteLine("Task 4: ");
+//static void F(string str, out string str1, out string str2)
+//{
+//    string s1 = "";
+//    string s2 = "";
+//    char[] chars = [' '];
+//        int f = 0;
+//        for (int i = 0; i < str.Length; i++)
+//        {
+//            if (f == 0)
+//            {
+//                for (int j = i; j <= i; j++)
+//                {
+//                    s1 += str[i];
+//                }
+//            }
+//            if (chars.Contains(str[i]))
+//            {
+//                f = 1;
+//            }
+//            if (f==1)
+//            {
+//                for (int j = i; j <= i; j++)
+//                {
+//                    s2 += str[i];
+//                }
+//            }
+//        }
+//    str1 = s1;
+//    str2 = s2;
+//}
+//string str = "Hello world!";
+//string str1;
+//string str2;
+//F(str, out str1, out str2);
+//Console.WriteLine($"{str1},{str2}");
+
+//// task 5  Напишите функцию, которая принимает массив по ссылке (in) и выводит его элементы на экран.
+//Console.WriteLine("Task 5: ");
+//static void Array(in int[] array)
+//{
+//    for (int i = 0; i < array.Length; i++)
+//    {
+//        Console.Write(array[i] + " ");
+//    }
+//    Console.WriteLine();
+//}
+//int[] array = { 1, 2, 3 };
+//Array(in array);
+
+//// task 6   Напишите функцию, которая принимает массив по ссылке (in) и возвращает сумму его элементов.
+//Console.WriteLine("Task 6: ");
+
+//static int Arra(in int[] arra)
+//{
+//    int sum = 0;
+//    for (int i = 0; i < arra.Length; i++)
+//    {
+//        sum+=arra[i];
+//    }
+//    return sum;
+//}
+//int[] arra = { 1, 2, 3 };
+//var ans = Arra(in arra);
+//Console.WriteLine(ans);
+
+
+/* Задачи для практики (первые 10 - простые, последние 4 - с WHERE):
+
+1. Метод вывода массива:
+   Напишите обобщённый метод, который принимает массив любого типа и выводит его элементы через запятую.
+
+2. Обмен значений:
+   Напишите обобщённый метод, который меняет местами два значения любого типа.
+*/
+// task 1  Напишите обобщённый метод, который принимает массив любого типа и выводит его элементы через запятую.
+using System.Drawing;
+
 Console.WriteLine("Task 1: ");
-static void Exc(ref int x, ref int y)
+static void Arr<T>(T[] arr)
 {
-    int b = x;
-    x = y;
-    y = b;
-     
-}
-
-int x = 10;
-int y = 12;
-
-Exc(ref x, ref y);
-
-Console.WriteLine($"x: {x}, y: {y}");
-
-// task 2  Напишите функцию, которая принимает число и процент по ссылке (ref), и увеличивает число на указанный процент.
-Console.WriteLine("Task 2: ");
-static void Per(ref int num,  int per)
-{
-    int a = num * per / 100 + num;
-    num = a;
-}
-
-int num = 10;
-int per = 200;
-
-Per(ref num,  per);
-
-Console.WriteLine($"{num}");
-
-// task 3  Напишите функцию, которая принимает размер массива и переменную для массива по ссылке (out), и создаёт массив указанного размера.
-Console.WriteLine("Task 3: ");
-static void Arr(int size, out int[] arr)
-{
-    arr = new int[size];
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = i;
+        Console.Write(arr[i]+", ");
     }
 }
-int size = 5;
-int[] arr;
-Arr(size, out arr);
-
-for  (int i = 0; i<arr.Length; i++)
-{
-    Console.Write(arr[i] + " ");
-}
+int[] arr = { 1, 2, 3 };
+Arr(arr);
 Console.WriteLine();
 
-// task 4  Напишите функцию, которая принимает строку и две переменные по ссылке (out), и разделяет строку на две части по первому пробелу.
-Console.WriteLine("Task 4: ");
-static void F(string str, out string str1, out string str2)
+// task 2  Напишите обобщённый метод, который меняет местами два значения любого типа.
+Console.WriteLine("Task 2: ");
+static void Num<T>(ref T num1, ref T num2)
 {
-    string s1 = "";
-    string s2 = "";
-    char[] chars = [' '];
-        int f = 0;
-        for (int i = 0; i < str.Length; i++)
-        {
-            if (f == 0)
-            {
-                for (int j = i; j <= i; j++)
-                {
-                    s1 += str[i];
-                }
-            }
-            if (chars.Contains(str[i]))
-            {
-                f = 1;
-            }
-            if (f==1)
-            {
-                for (int j = i; j <= i; j++)
-                {
-                    s2 += str[i];
-                }
-            }
-        }
-    str1 = s1;
-    str2 = s2;
+    T num = num1;
+    num1 = num2;
+    num2 = num;
 }
-string str = "Hello world!";
-string str1;
-string str2;
-F(str, out str1, out str2);
-Console.WriteLine($"{str1},{str2}");
+int num1 = 3;
+int  num2 = 4;
+Num(ref num1,ref num2);
+Console.WriteLine($"num1: {num1},num2: {num2}");
 
-// task 5  Напишите функцию, которая принимает массив по ссылке (in) и выводит его элементы на экран.
-Console.WriteLine("Task 5: ");
-static void Array(in int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write(array[i] + " ");
-    }
-    Console.WriteLine();
-}
-int[] array = { 1, 2, 3 };
-Array(in array);
-
-// task 6   Напишите функцию, которая принимает массив по ссылке (in) и возвращает сумму его элементов.
-Console.WriteLine("Task 6: ");
-
-static int Arra(in int[] arra)
-{
-    int sum = 0;
-    for (int i = 0; i < arra.Length; i++)
-    {
-        sum+=arra[i];
-    }
-    return sum;
-}
-int[] arra = { 1, 2, 3 };
-var ans = Arra(in arra);
-Console.WriteLine(ans);
