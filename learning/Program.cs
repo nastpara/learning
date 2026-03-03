@@ -1,4 +1,4 @@
-﻿
+﻿using System.IO;
 /*
     # Пользователь вводит два числа, нужно найти их сумму
     # Пользователь вводит число, поделить это число на 5 без остатка
@@ -1365,10 +1365,69 @@ else if (sym == '%')
 
 // task 1 Проверить, является ли строка номером телефона в формате "+7(XXX)XXX-XX-XX".
 
-using System.Text.RegularExpressions;
+//using System.Text.RegularExpressions;
 
-Console.WriteLine("Введите номер телефона: ");
-string number = "+7(930)087-53-00";
-string num = @"^\+7\((\d{3})\)\d{3}-\d{2}-\d{2}$";
-bool n = Regex.IsMatch(number, num);
-Console.WriteLine(n ? "Корректный номер телефона" : "Некорректный номер телефона");
+//Console.WriteLine("Введите номер телефона: ");
+//string number = "+7(930)087-53-00";
+//string num = @"^\+7\((\d{3})\)\d{3}-\d{2}-\d{2}$";
+//bool n = Regex.IsMatch(number, num);
+//Console.WriteLine(n ? "Корректный номер телефона" : "Некорректный номер телефона");
+
+/* Задачи:
+
+    1. Напишите программу, которая запрашивает у пользователя два числа и делит первое на второе. Обработайте `DivideByZeroException`.
+    2. Реализуйте метод, который открывает файл и считывает его содержимое. Обработайте `FileNotFoundException`.
+    3. Напишите метод, который просит ввести число и проверяет, является ли оно положительным. Если нет, выбросите `ArgumentException`.
+*/
+
+// task 1  Напишите программу, которая запрашивает у пользователя два числа и делит первое на второе. Обработайте `DivideByZeroException`.
+Console.WriteLine("Task 1: ");
+static void Null(int x, int y)
+{
+    try
+    {
+                Console.WriteLine(x / y);
+    }
+    catch(DivideByZeroException)
+    {
+        Console.WriteLine("Делить на 0 нельзя!"); 
+    }
+}
+int x = 10;
+int y = 0;
+Null(x, y);
+
+
+// task 2  Реализуйте метод, который открывает файл и считывает его содержимое. Обработайте `FileNotFoundException`.Console.WriteLine("Task 2: ");
+Console.WriteLine("Task 2: ");
+static void Fil()
+{
+    try
+    {
+        string filePath1 = "wefds";
+        string readText = File.ReadAllText(filePath1);
+        File.Create(filePath1).Close();
+        File.WriteAllText(filePath1, readText);
+    }
+    catch (FileNotFoundException)
+    {
+        Console.WriteLine("Ошибка: Файл не найден.");
+    }
+}
+Fil();
+
+// task 3  Напишите метод, который просит ввести число и проверяет, является ли оно положительным. Если нет, выбросите `ArgumentException`.
+Console.WriteLine("Task 3: ");
+static void Num(int num)
+{
+    if (num>0)
+    {
+        Console.WriteLine("Ok");
+    }
+    else
+    {
+        throw new ArgumentException("Число отрицательное!");
+    }
+}
+int num = int.Parse(Console.ReadLine());
+Num(num);
