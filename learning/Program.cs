@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 /*
     # Пользователь вводит два числа, нужно найти их сумму
     # Пользователь вводит число, поделить это число на 5 без остатка
@@ -1381,53 +1382,145 @@ else if (sym == '%')
 */
 
 // task 1  Напишите программу, которая запрашивает у пользователя два числа и делит первое на второе. Обработайте `DivideByZeroException`.
-Console.WriteLine("Task 1: ");
-static void Null(int x, int y)
-{
-    try
-    {
-                Console.WriteLine(x / y);
-    }
-    catch(DivideByZeroException)
-    {
-        Console.WriteLine("Делить на 0 нельзя!"); 
-    }
-}
-int x = 10;
-int y = 0;
-Null(x, y);
+//Console.WriteLine("Task 1: ");
+//static void Null(int x, int y)
+//{
+//    try
+//    {
+//                Console.WriteLine(x / y);
+//    }
+//    catch(DivideByZeroException)
+//    {
+//        Console.WriteLine("Делить на 0 нельзя!"); 
+//    }
+//}
+//int x = 10;
+//int y = 0;
+//Null(x, y);
 
 
-// task 2  Реализуйте метод, который открывает файл и считывает его содержимое. Обработайте `FileNotFoundException`.Console.WriteLine("Task 2: ");
-Console.WriteLine("Task 2: ");
-static void Fil()
-{
-    try
-    {
-        string filePath1 = "wefds";
-        string readText = File.ReadAllText(filePath1);
-        File.Create(filePath1).Close();
-        File.WriteAllText(filePath1, readText);
-    }
-    catch (FileNotFoundException)
-    {
-        Console.WriteLine("Ошибка: Файл не найден.");
-    }
-}
-Fil();
+//// task 2  Реализуйте метод, который открывает файл и считывает его содержимое. Обработайте `FileNotFoundException`.Console.WriteLine("Task 2: ");
+//Console.WriteLine("Task 2: ");
+//static void Fil()
+//{
+//    try
+//    {
+//        string filePath1 = "wefds";
+//        string readText = File.ReadAllText(filePath1);
+//        File.Create(filePath1).Close();
+//        File.WriteAllText(filePath1, readText);
+//    }
+//    catch (FileNotFoundException)
+//    {
+//        Console.WriteLine("Ошибка: Файл не найден.");
+//    }
+//}
+//Fil();
 
-// task 3  Напишите метод, который просит ввести число и проверяет, является ли оно положительным. Если нет, выбросите `ArgumentException`.
-Console.WriteLine("Task 3: ");
-static void Num(int num)
+//// task 3  Напишите метод, который просит ввести число и проверяет, является ли оно положительным. Если нет, выбросите `ArgumentException`.
+//Console.WriteLine("Task 3: ");
+//static void Num(int num)
+//{
+//    if (num>0)
+//    {
+//        Console.WriteLine("Ok");
+//    }
+//    else
+//    {
+//        throw new ArgumentException("Число отрицательное!");
+//    }
+//}
+//int num = int.Parse(Console.ReadLine());
+//Num(num);
+
+
+/* Задания на практику:
+
+    1. Создайте перечисление `Seasons` с элементами: `Winter`, `Spring`, `Summer`, `Autumn`.
+    2. Напишите метод, который принимает `Seasons` и выводит пример месяца (например, `Winter → Декабрь`).
+    3. Реализуйте перечисление `HttpStatusCode` с популярными кодами (например, `OK = 200`, `NotFound = 404`).
+       Напишите метод, который принимает `HttpStatusCode` и возвращает его текстовое описание.
+*/
+
+// task 1 - 2  Создайте перечисление `Seasons` с элементами: `Winter`, `Spring`, `Summer`, `Autumn`.
+Console.Write("\nВведите месяц (1-4): ");
+static void Season(int Month)
 {
-    if (num>0)
+    Month--;
+    if (Enum.IsDefined(typeof(Seasons), Month))
     {
-        Console.WriteLine("Ok");
+        Seasons day = (Seasons)Month;
+
+        switch (day)
+        {
+            case Seasons.Winter:
+                Console.WriteLine("Декабрь");
+                break;
+            case Seasons.Spring:
+                Console.WriteLine("Март");
+                break;
+            case Seasons.Summer:
+                Console.WriteLine("Август");
+                break;
+            case Seasons.Autumn:
+                Console.WriteLine("Ноябрь");
+                break;
+        }
     }
     else
     {
-        throw new ArgumentException("Число отрицательное!");
+        Console.WriteLine("Некорректный день месяца.");
     }
 }
-int num = int.Parse(Console.ReadLine());
-Num(num);
+int Month = int.Parse(Console.ReadLine());
+Season(Month);
+
+
+// task 3    Реализуйте перечисление `HttpStatusCode` с популярными кодами (например, `OK = 200`, `NotFound = 404`).
+//Напишите метод, который принимает `HttpStatusCode` и возвращает его текстовое описание.
+Console.WriteLine("task 2: ");
+Console.Write("\nВведите ошибку:  ");
+static void StatusCode(string Error)
+{
+    if (Enum.TryParse(Error, true, out HttpStatusCode statusCode))
+    {
+
+        switch (statusCode)
+        {
+            case HttpStatusCode.OK:
+                Console.WriteLine("ошибка: 200");
+                break;
+            case HttpStatusCode.NotFound:
+                Console.WriteLine("ошибка: 404");
+                break;
+            case HttpStatusCode.Created:
+                Console.WriteLine("ошибка: 201");
+                break;
+            case HttpStatusCode.Accepted:
+                Console.WriteLine("ошибка: 202");
+                break;
+        }
+    }
+    else
+    {
+        Console.WriteLine("Некорректная ошибка.");
+    }
+}
+string Error = Console.ReadLine();
+StatusCode(Error);
+
+enum HttpStatusCode
+{
+    OK = 200,
+    NotFound =404,
+    Created = 201,
+    Accepted = 202
+}
+enum Seasons
+{
+    Winter,
+    Spring,
+    Summer,
+    Autumn
+
+}
