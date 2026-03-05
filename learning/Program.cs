@@ -1443,84 +1443,182 @@ else if (sym == '%')
 */
 
 // task 1 - 2  Создайте перечисление `Seasons` с элементами: `Winter`, `Spring`, `Summer`, `Autumn`.
-Console.Write("\nВведите месяц (1-4): ");
-static void Season(int Month)
-{
-    Month--;
-    if (Enum.IsDefined(typeof(Seasons), Month))
-    {
-        Seasons day = (Seasons)Month;
+//Console.Write("\nВведите месяц (1-4): ");
+//static void Season(int Month)
+//{
+//    Month--;
+//    if (Enum.IsDefined(typeof(Seasons), Month))
+//    {
+//        Seasons day = (Seasons)Month;
 
-        switch (day)
+//        switch (day)
+//        {
+//            case Seasons.Winter:
+//                Console.WriteLine("Декабрь");
+//                break;
+//            case Seasons.Spring:
+//                Console.WriteLine("Март");
+//                break;
+//            case Seasons.Summer:
+//                Console.WriteLine("Август");
+//                break;
+//            case Seasons.Autumn:
+//                Console.WriteLine("Ноябрь");
+//                break;
+//        }
+//    }
+//    else
+//    {
+//        Console.WriteLine("Некорректный день месяца.");
+//    }
+//}
+//int Month = int.Parse(Console.ReadLine());
+//Season(Month);
+
+
+//// task 3    Реализуйте перечисление `HttpStatusCode` с популярными кодами (например, `OK = 200`, `NotFound = 404`).
+////Напишите метод, который принимает `HttpStatusCode` и возвращает его текстовое описание.
+//Console.WriteLine("task 2: ");
+//Console.Write("\nВведите ошибку:  ");
+//static void StatusCode(string Error)
+//{
+//    if (Enum.TryParse(Error, true, out HttpStatusCode statusCode))
+//    {
+
+//        switch (statusCode)
+//        {
+//            case HttpStatusCode.OK:
+//                Console.WriteLine("ошибка: 200");
+//                break;
+//            case HttpStatusCode.NotFound:
+//                Console.WriteLine("ошибка: 404");
+//                break;
+//            case HttpStatusCode.Created:
+//                Console.WriteLine("ошибка: 201");
+//                break;
+//            case HttpStatusCode.Accepted:
+//                Console.WriteLine("ошибка: 202");
+//                break;
+//        }
+//    }
+//    else
+//    {
+//        Console.WriteLine("Некорректная ошибка.");
+//    }
+//}
+//string Error = Console.ReadLine();
+//StatusCode(Error);
+
+//enum HttpStatusCode
+//{
+//    OK = 200,
+//    NotFound =404,
+//    Created = 201,
+//    Accepted = 202
+//}
+//enum Seasons
+//{
+//    Winter,
+//    Spring,
+//    Summer,
+//    Autumn
+
+//}
+
+/* Задача
+     Сделай поле возраста по умолчанию = 0. После каждой 10-й игры увеличивай поле на 1.
+     */
+
+
+/* Творческое задание
+
+ Создай класс человека - придумай что он будет делать и какие поля у него будут. Реализуй)
+ */
+
+
+
+class Pet
+{
+    public string petName; 
+    public int petAge;
+    public int PetVolPlay;
+    public void Play(string petName, ref int PetVolPlay)
+    {
+        PetVolPlay++;
+        Console.WriteLine($"{petName} играет!");
+    }
+
+    public void GettingOld(ref int petAge, string petName, ref int PetVolPlay)
+    {
+        Console.WriteLine(PetVolPlay);
+        petAge = PetVolPlay / 10;
+        Console.WriteLine($"{petName} постарел. Теперь ему {petAge}");
+
+    }
+}
+class People
+{
+    public int PetHunger;
+    public void Hunger(ref int PetHunger)
+    {
+        PetHunger += 20;
+        if (PetHunger <= 100)
         {
-            case Seasons.Winter:
-                Console.WriteLine("Декабрь");
-                break;
-            case Seasons.Spring:
-                Console.WriteLine("Март");
-                break;
-            case Seasons.Summer:
-                Console.WriteLine("Август");
-                break;
-            case Seasons.Autumn:
-                Console.WriteLine("Ноябрь");
-                break;
+            Console.WriteLine($"Человек дал вкусняшку, питомец сытен на: {PetHunger}%!");
         }
-    }
-    else
-    {
-        Console.WriteLine("Некорректный день месяца.");
-    }
-}
-int Month = int.Parse(Console.ReadLine());
-Season(Month);
-
-
-// task 3    Реализуйте перечисление `HttpStatusCode` с популярными кодами (например, `OK = 200`, `NotFound = 404`).
-//Напишите метод, который принимает `HttpStatusCode` и возвращает его текстовое описание.
-Console.WriteLine("task 2: ");
-Console.Write("\nВведите ошибку:  ");
-static void StatusCode(string Error)
-{
-    if (Enum.TryParse(Error, true, out HttpStatusCode statusCode))
-    {
-
-        switch (statusCode)
+        else if (PetHunger<141 && PetHunger>100)
         {
-            case HttpStatusCode.OK:
-                Console.WriteLine("ошибка: 200");
-                break;
-            case HttpStatusCode.NotFound:
-                Console.WriteLine("ошибка: 404");
-                break;
-            case HttpStatusCode.Created:
-                Console.WriteLine("ошибка: 201");
-                break;
-            case HttpStatusCode.Accepted:
-                Console.WriteLine("ошибка: 202");
-                break;
+            Console.WriteLine($"Питомец объелся!питомец пересытен на: {PetHunger - 100}%!");
         }
-    }
-    else
-    {
-        Console.WriteLine("Некорректная ошибка.");
-    }
-}
-string Error = Console.ReadLine();
-StatusCode(Error);
+        else
+        {
+            Console.WriteLine($"Питомец умер из-за переедания!");
 
-enum HttpStatusCode
-{
-    OK = 200,
-    NotFound =404,
-    Created = 201,
-    Accepted = 202
+        }
+        
+    }
 }
-enum Seasons
+internal class Program
 {
-    Winter,
-    Spring,
-    Summer,
-    Autumn
+     public static void Main()
+     {
+        Pet pet = new Pet();
+        People people = new People();
+        pet.petName = "Бобик";
+        pet.petAge = 0;
+        pet.PetVolPlay = 0;
+        people.PetHunger = 0;
 
-}
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        pet.Play(pet.petName, ref pet.PetVolPlay);
+        people.Hunger(ref people.PetHunger);
+        people.Hunger(ref people.PetHunger);
+        people.Hunger(ref people.PetHunger);
+        people.Hunger(ref people.PetHunger);
+        people.Hunger(ref people.PetHunger);
+        people.Hunger(ref people.PetHunger);
+        people.Hunger(ref people.PetHunger);
+        people.Hunger(ref people.PetHunger);
+        pet.GettingOld(ref pet.petAge, pet.petName, ref pet.PetVolPlay);
+    }
+}   
+
